@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
-      home: const RootPage(),
+      darkTheme: ThemeData.dark(), // standard dark theme
+      themeMode: ThemeMode.system, home: const RootPage(),
     );
   }
 }
@@ -40,11 +40,11 @@ class _RootPageState extends State<RootPage> {
       ),
       bottomNavigationBar: NavigationBar(
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.home), label: "Stok Produk"),
+          NavigationDestination(icon: Icon(Icons.home), label: "Dashboard"),
           NavigationDestination(
               icon: Icon(Icons.shopping_cart), label: "Kasir"),
           NavigationDestination(icon: Icon(Icons.history), label: "History"),
-          NavigationDestination(icon: Icon(Icons.person), label: "Profil")
+          NavigationDestination(icon: Icon(Icons.person), label: "Profile")
         ],
         onDestinationSelected: (int index) {
           setState(() {
